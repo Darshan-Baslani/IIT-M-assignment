@@ -40,7 +40,7 @@ This notebook explores techniques for optimizing the loading and inference of la
 
 **Q3** Can we increase batch sizes when compressing? How does batching affect generation speed?
 
--> Yes we can increase batch sizes as demonstrated in the notebook. Because of Batching the inference time grows unexpectedly. Also, the VRAM needs more compute while dealing with batches. This is also quite visible in the above table. Although batching doesn't affect RAM in our example.
+-> Yes we can increase batch sizes as demonstrated in the notebook. Because of Batching the inference time grows unexpectedly. Also, the VRAM needs more compute while dealing with batches. This is also quite visible in the above table. Although batching doesn't affect RAM in our example. But we can only increase batch sizes upto a certain extent. I tried inferencing with batch size of 32, but failed due to limited VRAM.
 
 **Q4** What are the largest models you can fit on the colab GPUs? What tricks did you use?
 
