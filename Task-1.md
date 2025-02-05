@@ -9,7 +9,7 @@ Bloom is focused on evaluation of architectural decisions on zero-shot generaliz
 
 **Embedding LayerNorm:** Adding LayerNorm after the embedding layer improved training stability in a 104B parameter model, as suggested by bitsandbytes’ StableEmbedding. However, it slightly hurt zero-shot generalization.
 
-A very high fertility on a language compared to a monolingual tokenizer may indicate a degradation on the downstream multilingual performance of the model. The goal was to not degrade fertility rate by 10% when comparing multilingual tokenizer with monolingual tokenizers in corresponding languages. For all experiments, the Hugging Face Tokenizers library was used to design and train the tested tokenizers. Furthermore, Byte Level BPE was used.
+A very high fertility on a language compared to a monolingual tokenizer may indicate a degradation on the downstream multilingual performance of the model. The goal was to not degrade fertility rate by 10% when comparing multilingual tokenizer with monolingual tokenizers in corresponding languages. For all experiments, the Hugging Face Tokenizers library was used to design and train the tested tokenizers. Furthermore, Byte Level BPE was used.
 
 # Gemma
 Gemma models are a family of lightweight, state-of-the-art open language models developed by Google DeepMind. Designed to be highly efficient and accessible, Gemma models are built on the same research and technology that powers Google's Gemini models, but are optimized for smaller-scale use cases. Gemma 2 models are based on a decoder-only transformer architecture.
@@ -30,7 +30,7 @@ Gemma has been trained for large quantities of tokens with distillation in order
 
 **Grouped-Query Attention:** GQA with num_groups = 2 has been used, based on ablations showing increased speed at inference time while maintaining downstream performance.
 
-**Post-norm and pre-norm with RMSNorm** Input of each transformer sub-layer, the attention layer and the feedforward layer is normalized, with RMSNorm to stabilize the training.
+**Post-norm and pre-norm with RMSNorm** Input of each transformer sub-layer, the attention layer and the feedforward layer is normalized, with RMSNorm to stabilize the training.
 
 **Local Sliding Window and Global Attention**. They switch between a local sliding window attention and global attention in every other layer.
 
